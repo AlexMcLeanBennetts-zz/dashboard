@@ -31,14 +31,15 @@ function App() {
     <div className="App">
       <LayoutHeader />
       {policyInformation ? (
-
-        activeComponent === DASHBOARD ? <Dashboard policyData={policyInformation} setActiveComponent={setActiveComponent} /> :
-          activeComponent === AMEND_POLICY_DETAILS ? <AmendmentsPage policyData={policyInformation} setActiveComponent={setActiveComponent} /> :
-            activeComponent === VIEW_DETAILS ? <PolicyDetailsPage policyData={policyInformation} setActiveComponent={setActiveComponent} /> :
-              activeComponent === QUOTES ? <QuotesPage policyData={policyInformation} setActiveComponent={setActiveComponent} /> :
-                activeComponent === DOCUMENTS ? <DocumentsPage policyData={policyInformation} setActiveComponent={setActiveComponent} /> :
-                  activeComponent === PAYMENTS ? <PaymentsPage policyData={policyInformation} setActiveComponent={setActiveComponent} /> :
-                    activeComponent === CLAIMS && <ClaimsPage policyData={policyInformation} setActiveComponent={setActiveComponent} />
+        <main className="container mx-auto w-1/2">
+          {activeComponent === DASHBOARD ? <Dashboard policyData={policyInformation} setActiveComponent={setActiveComponent} /> :
+            activeComponent === AMEND_POLICY_DETAILS ? <AmendmentsPage policyData={policyInformation} setActiveComponent={setActiveComponent} /> :
+              activeComponent === VIEW_DETAILS ? <PolicyDetailsPage policyData={policyInformation} setActiveComponent={setActiveComponent} /> :
+                activeComponent === QUOTES ? <QuotesPage policyData={policyInformation} setActiveComponent={setActiveComponent} /> :
+                  activeComponent === DOCUMENTS ? <DocumentsPage policyData={policyInformation} setActiveComponent={setActiveComponent} /> :
+                    activeComponent === PAYMENTS ? <PaymentsPage policyData={policyInformation} setActiveComponent={setActiveComponent} /> :
+                      activeComponent === CLAIMS && <ClaimsPage policyData={policyInformation} setActiveComponent={setActiveComponent} />}
+        </main>
       ) : (
         <CircularLoader />
       )}

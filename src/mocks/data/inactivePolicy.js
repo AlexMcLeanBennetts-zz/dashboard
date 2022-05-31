@@ -1,7 +1,21 @@
 const inactivePolicy = {
     policyNumber: 'XYZ789',
-    name: 'Dave Smith',
-    address: ['22 Name ', 'City name', 'YY12 3ZY'],
+    policyHolder: {
+        name: 'Dave Smith',
+        address: ['22 Road Name', 'City name', 'YY12 3ZY'],
+        occupation: 'Software Engineer',
+        dob: '1993-09-04',
+        ukResidentSince: '1993-09-04',
+        licenceType: 'Full [UK]',
+        datePassedTest: '2013-01-10',
+        drivingLicenceNumber: '1234567890',
+        NCB: '1',
+        claimsAndConvictions: [],
+        paymentInformation: {
+            accountNumber: 987654321,
+            sortCode: '98-76-54',
+        }
+    },
     policyType: 'thirdParty',
     price: {
         total: '400.55',
@@ -20,12 +34,24 @@ const inactivePolicy = {
     policyDetails: {
         start: '2020-04-03',
         end: '2021-04-02',
-        NCB: '1',
+        excess: {
+            compulsory: 100,
+            voluntary: 50,
+        },
+        usage: 'A - Social Domestic & Pleasure',
+        extras: {
+            europeanCover: true,
+            drivingOtherCars: true,
+            courtesyCar: true,
+            keyCover: true,
+        },
+        optionalExtras: {
+            personalAccidentCover: false,
+            legalExpenses: false,
+            breakdownCover: true,
+            hireCarCover: false
+        }
     },
-    paymentInformation: {
-        accountNumber: 987654321,
-        sortCode: '98-76-54',
-    }
 };
 
 export default inactivePolicy;

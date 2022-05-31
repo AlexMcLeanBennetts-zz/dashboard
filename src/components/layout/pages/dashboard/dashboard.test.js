@@ -46,7 +46,7 @@ describe('Setup', () => {
             <Dashboard policyData={policyInformation} />
         )
 
-        const main = screen.getByRole('main');
-        expect(main).toBeInTheDocument();
+        const title = screen.getByRole('heading', { name: 'Your Policy Information' });
+        expect(title).toBeInTheDocument();
     })
 })

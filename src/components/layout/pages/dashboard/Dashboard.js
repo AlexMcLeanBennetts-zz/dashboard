@@ -58,12 +58,14 @@ const Dashboard = ({ policyData, setActiveComponent }) => {
         setActiveComponent(CLAIMS)
     }
     const car = policyData?.car;
-    let nameHasBeenSplitToArray = policyData?.name.split(' ');
+    let nameHasBeenSplitToArray = policyData?.policyHolder.name.split(' ');
+
+
 
     return (
         <>
             {policyData ? (
-                <main className="container mx-auto w-1/2">
+                <>
                     <div className='mb-10'>
                         <div className='mb-6'>
                             <p className='font-sans text-6xl font-bold text-rose-600'>Welcome back {nameHasBeenSplitToArray[0]}!</p>
@@ -160,7 +162,7 @@ const Dashboard = ({ policyData, setActiveComponent }) => {
 
 
 
-                </main>
+                </>
 
             ) : (
                 <CircularLoader />
