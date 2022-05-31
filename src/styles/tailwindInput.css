@@ -1,3 +1,96 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.icon::before {
+    background-image: url(../assets/account.svg);
+    height: 90%;
+    width: 90%;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #fff;
+    content: "";
+    display: inline-block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.icon::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.icon-car {
+    height: 90%;
+    width: 90%;
+    margin-top: -2px;
+    margin-left: 1px;
+    background-image: url(../assets/hire-car.svg);
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #fff;
+    content: "";
+    display: inline-block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.multicar-container::before {
+    background-image: url(../assets/background-multicar.png);
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-size: 115%;
+    left: -5rem;
+}
+
+.icon-contact::before {
+    background-image: url(../assets/speech_bubble.svg);
+    height: 90%;
+    width: 90%;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #fff;
+    content: "";
+    display: inline-block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.icon-settings::before {
+    background-image: url(../assets/settings.svg);
+    height: 90%;
+    width: 90%;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #fff;
+    content: "";
+    display: inline-block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.icon-contact::after, .icon-settings::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
