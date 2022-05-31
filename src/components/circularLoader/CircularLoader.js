@@ -40,6 +40,7 @@ const LoaderStyles = styled.div`
     border-radius: 50%;
     -webkit-animation: loader-5-2 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
     animation: loader-5-2 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    background-color: black;
   }
   @-webkit-keyframes loader-5-2 {
     0% {
@@ -78,6 +79,7 @@ const LoaderStyles = styled.div`
     border-radius: 50%;
     -webkit-animation: loader-5-3 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
     animation: loader-5-3 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    background-color: black;
   }
   @-webkit-keyframes loader-5-3 {
     0% {
@@ -127,6 +129,7 @@ const LoaderStyles = styled.div`
     border-radius: 50%;
     -webkit-animation: loader-5-4 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
     animation: loader-5-4 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+        background-color: black;
   }
   @-webkit-keyframes loader-5-4 {
     0% {
@@ -165,6 +168,7 @@ const LoaderStyles = styled.div`
     border-radius: 50%;
     -webkit-animation: loader-5-5 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
     animation: loader-5-5 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    background-color: black;
   }
   @-webkit-keyframes loader-5-5 {
     0% {
