@@ -1,9 +1,11 @@
 import React from 'react';
-import PolicyStatus from '../../../PolicyStatus/PolicyStatus';
+import PolicyStatus from 'components/PolicyStatus/PolicyStatus';
 import moment from 'moment';
-import CardContainer from '../../../cardContainer/CardContainer';
-import iconTick from '../../../../assets/tick-green.svg';
-import iconCross from '../../../../assets/cross-red.svg';
+import CardContainer from 'components/cardContainer/CardContainer';
+import TitleAndText from 'components/TitleAndText/TitleAndText';
+import ListOfIncludedExtras from 'components/ListOfIncludedExtras/ListOfInlcudedExtras'
+import PageTitle from 'components/PageTitle';
+
 
 export default function PolicyDetailsPage({ policyData, setActiveComponent }) {
     let formattedStartDate = moment(policyData.policyDetails.start).format('Do MMM YY');
@@ -36,67 +38,61 @@ export default function PolicyDetailsPage({ policyData, setActiveComponent }) {
         '0';
     return (
         <>
-            <div className='mb-10'>
-                <h1 className="font-sans text-6xl font-bold text-rose-600">Your Policy's details</h1>
-            </div>
+            <PageTitle text="Your Policy's details" />
+
 
             <CardContainer>
 
                 <section className='flex flex-col px-20 py-10'>
                     <div className='flex justify-between items-center mb-4'>
-                        <div className='w-4/12'>
+                        <div className="w-4/12">
                             <PolicyStatus start={policyData.policyDetails.start} end={policyData.policyDetails.end} />
                             <p data-testid='policyNumber' className='mb-3'><span className='font-bold'>Policy Number:</span> {policyNumberFormatted}</p>
                         </div>
-                        <div className="w-4/12">
-                            <h3 className='font-bold'>Policy start and end date</h3>
-                            <p>{formattedStartDate} - {formattedEndDate}</p>
-                        </div>
+                        <TitleAndText
+                            title="Policy start and end date"
+                            text={`${formattedStartDate} - ${formattedEndDate}`}
+                        />
+                    </div>
+
+                    <div className='flex justify-between items-center mb-4'>
+                        <TitleAndText
+                            title="Cover type"
+                            text={policyType}
+                        />
+
+                        <TitleAndText
+                            title="Usage"
+                            text={policyData.policyDetails.usage}
+                        />
+
+                    </div>
+
+                    <div className='flex justify-between items-center mb-4'>
+                        <TitleAndText
+                            title="Compulsory excess"
+                            text={`£${policyData.policyDetails.excess.compulsory}`}
+                        />
+
+                        <TitleAndText
+                            title="Voluntary excess"
+                            text={`£${policyData.policyDetails.excess.voluntary}`}
+                        />
                     </div>
 
                     <div className='flex justify-between items-center mb-4'>
                         <div className='w-4/12'>
-                            <h3 className='font-bold'>Cover type</h3>
-                            <p>{policyType}</p>
+
+                            <ListOfIncludedExtras title="What's included" data={policyData.policyDetails.extras} />
+
                         </div>
                         <div className="w-4/12">
-                            <h3 className='font-bold'>Usage</h3>
-                            <p>{policyData.policyDetails.usage}</p>
-                        </div>
-                    </div>
-
-                    <div className='flex justify-between items-center mb-4'>
-                        <div className='w-4/12'>
-                            <h3 className='font-bold'>Compulsory excess</h3>
-                            <p>{`£${policyData.policyDetails.excess.compulsory}`}</p>
-                        </div>
-                        <div className="w-4/12">
-                            <h3 className='font-bold'>Voluntary excess</h3>
-                            <p>{`£${policyData.policyDetails.excess.voluntary}`}</p>
-                        </div>
-                    </div>
-
-                    <div className='flex justify-between items-center mb-4'>
-                        <div className='w-4/12'>
-                            <h3 className='font-bold'>What's included</h3>
-
-                            <ul aria-labelledby='included-in-policy'>
-                                {Object.entries(policyData.policyDetails.extras).map(([key, value]) => {
-                                    return <ListItem key={key} title={key} included={value} />
-                                })}
-                            </ul>
-                        </div>
-                        <div className="w-4/12">
-                            <h3 className='font-bold'>Optional Extras</h3>
-                            <ul>
-                                {Object.entries(policyData.policyDetails.optionalExtras).map(([key, value]) => {
-                                    return <ListItem key={key} title={key} included={value} />
-                                })}
-                            </ul>
+                            <ListOfIncludedExtras title="Optional Extras" data={policyData.policyDetails.optionalExtras} />
                         </div>
                     </div>
                 </section>
             </CardContainer>
+
             <h2 className="font-sans text-4xl font-bold text-rose-600 mt-10 mb-5">Vehicles</h2>
             <CardContainer>
                 <section className="flex flex-col px-20 py-10">
@@ -193,11 +189,3 @@ export default function PolicyDetailsPage({ policyData, setActiveComponent }) {
     )
 }
 
-function ListItem({ title, included }) {
-    return (
-        <li>
-            <img className='w-8 h-8 inline-block' src={included ? iconTick : iconCross} alt={included ? 'Included' : 'Not included'}></img>
-            {title}
-        </li>
-    )
-}

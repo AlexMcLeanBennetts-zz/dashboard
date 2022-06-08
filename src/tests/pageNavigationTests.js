@@ -1,6 +1,6 @@
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import App from '../App';
+import App from 'views/App';
 
 describe('the page redirects from the dashboard', () => {
     it('renders the amendments page when the "make a change" button is pressed', async () => {

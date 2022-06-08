@@ -1,17 +1,16 @@
-import './styles/output.css';
-import { useState } from 'react';
-import { fetchData } from './services/fetchData';
-import { DASHBOARD, AMEND_POLICY_DETAILS, VIEW_DETAILS, DOCUMENTS, PAYMENTS, CLAIMS, MULTICAR_QUOTE, REFERAL, QUOTES } from './constants/ActiveComponents';
-import LayoutHeader from './components/layout/Header';
-import Dashboard from './components/layout/pages/dashboard/Dashboard';
-import { useEffect } from 'react';
-import CircularLoader from './components/circularLoader/CircularLoader';
-import AmendmentsPage from './components/layout/pages/amendments/Amendments';
-import PolicyDetailsPage from './components/layout/pages/policyDetails/PolicyDetails';
-import QuotesPage from './components/layout/pages/quotes/QuotesPage';
-import DocumentsPage from './components/layout/pages/documents/DocumentsPage';
-import PaymentsPage from './components/layout/pages/payments/PaymentsPage';
-import ClaimsPage from './components/layout/pages/claims/ClaimsPage';
+import 'assets/styles/output.css';
+import { useState, useEffect } from 'react';
+import { fetchData } from 'utils/services/fetchData.js';
+import { DASHBOARD, AMEND_POLICY_DETAILS, VIEW_DETAILS, DOCUMENTS, PAYMENTS, CLAIMS, MULTICAR_QUOTE, REFERAL, QUOTES } from 'utils/constants/ActiveComponents.js';
+import LayoutHeader from 'components/layout/Header.js';
+import Dashboard from 'views/dashboard/Dashboard.js';
+import CircularLoader from 'components/circularLoader/CircularLoader.js';
+import AmendmentsPage from 'views/amendments/Amendments.js';
+import PolicyDetailsPage from 'views/policyDetails/PolicyDetails.js';
+import QuotesPage from 'views/quotes/QuotesPage.js';
+import DocumentsPage from 'views/documents/DocumentsPage.js';
+import PaymentsPage from 'views/payments/PaymentsPage.js';
+import ClaimsPage from 'views/claims/ClaimsPage.js';
 
 
 function App() {
@@ -29,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <LayoutHeader />
+      <LayoutHeader setActiveComponent={setActiveComponent} />
       {policyInformation ? (
         <main className="container mx-auto w-1/2">
           {activeComponent === DASHBOARD ? <Dashboard policyData={policyInformation} setActiveComponent={setActiveComponent} /> :

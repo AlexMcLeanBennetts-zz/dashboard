@@ -1,7 +1,7 @@
 import { screen, render } from '@testing-library/react';
-import App from '../App';
+import App from 'views/App';
 import { rest } from 'msw';
-import { server } from '../mocks/server';
+import { server } from 'tests/mocks/server';
 
 describe('when there is data', () => {
     it('shows the dashboard', async () => {

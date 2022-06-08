@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import CircularLoader from "../../../circularLoader/CircularLoader";
-import CardContainer from '../../../cardContainer/CardContainer';
-import ShortPolicyDetailCard from '../../../ShortPolicyDetailCard/ShortPolicyDetailCard';
-import IconCard from "../../../IconCard/IconCard";
-import Button from "../../../button/Button";
-import quoteSVG from '../../../../assets/quotes.svg';
-import documentsSVG from '../../../../assets/documents.svg';
-import paymentsSVG from '../../../../assets/payments.svg';
-import claimsSVG from '../../../../assets/policy.svg';
-import multicarImg from '../../../../assets/multi-car.png';
+import CircularLoader from "components/circularLoader/CircularLoader";
+import CardContainer from 'components/cardContainer/CardContainer';
+import ShortPolicyDetailCard from 'components/ShortPolicyDetailCard/ShortPolicyDetailCard';
+import IconCard from "components/IconCard/IconCard";
+import Button from "components/button/Button";
+import quoteSVG from 'assets/svg/quotes.svg';
+import documentsSVG from 'assets/svg/documents.svg';
+import paymentsSVG from 'assets/svg/payments.svg';
+import claimsSVG from 'assets/svg/policy.svg';
+import multicarImg from 'assets/svg/multi-car.png';
 import {
     AMEND_POLICY_DETAILS,
     VIEW_DETAILS,
@@ -18,7 +18,7 @@ import {
     DOCUMENTS,
     PAYMENTS,
     CLAIMS
-} from '../../../../constants/ActiveComponents';
+} from 'utils/constants/ActiveComponents';
 
 
 

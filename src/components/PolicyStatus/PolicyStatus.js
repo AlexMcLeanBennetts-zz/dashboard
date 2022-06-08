@@ -1,5 +1,5 @@
 import React from "react";
-import usePolicyDetails from '../../hooks/usePolicyIsActive/usePolicyIsActive';
+import usePolicyDetails from '../../utils/hooks/usePolicyIsActive';
 
 export default function PolicyStatus({ start, end }) {
 

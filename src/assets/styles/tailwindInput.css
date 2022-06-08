@@ -4,7 +4,7 @@
 
 
 .icon::before {
-    background-image: url(../assets/account.svg);
+    background-image: url(assets/svg/account.svg);
     height: 90%;
     width: 90%;
     background-position: 50%;
@@ -30,7 +30,7 @@
     width: 90%;
     margin-top: -2px;
     margin-left: 1px;
-    background-image: url(../assets/hire-car.svg);
+    background-image: url(assets/svg/hire-car.svg);
     background-position: 50%;
     background-size: contain;
     background-repeat: no-repeat;
@@ -45,7 +45,7 @@
 }
 
 .multicar-container::before {
-    background-image: url(../assets/background-multicar.png);
+    background-image: url(assets/svg/background-multicar.png);
     background-position: 100% 0;
     background-repeat: no-repeat;
     content: '';
@@ -58,7 +58,7 @@
 }
 
 .icon-contact::before {
-    background-image: url(../assets/speech_bubble.svg);
+    background-image: url(assets/svg/speech_bubble.svg);
     height: 90%;
     width: 90%;
     background-position: 50%;
@@ -74,7 +74,7 @@
     transform: translate(-50%,-50%);
 }
 .icon-settings::before {
-    background-image: url(../assets/settings.svg);
+    background-image: url(assets/svg/settings.svg);
     height: 90%;
     width: 90%;
     background-position: 50%;
@@ -100,7 +100,7 @@
     width: 90%;
     margin-top: -2px;
     margin-left: 1px;
-    background-image: url(../assets/profile.svg);
+    background-image: url(assets/svg/profile.svg);
     background-position: 50%;
     background-size: contain;
     background-repeat: no-repeat;

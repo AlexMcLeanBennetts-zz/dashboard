@@ -1,13 +1,13 @@
 import { screen, render, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { rest } from 'msw';
-import { server } from '../mocks/server';
+import { server } from 'tests/mocks/server';
 import moment from 'moment';
 
 
-import App from '../App';
-import testData from '../mocks/data/testData';
-import inactivePolicy from '../mocks/data/inactivePolicy.js';
+import App from 'views/App';
+import testData from 'tests/mocks/data/testData';
+import inactivePolicy from 'tests/mocks/data/inactivePolicy.js';
 
 describe('the page has the following items', () => {
     beforeEach(async () => {
@@ -66,7 +66,8 @@ describe('the page has the following items', () => {
 
     it("shows what's included within the policy", () => {
 
-        const list = screen.getAllByRole("list")[0];
+        const mainSection = screen.getByRole('main');
+        const list = within(mainSection).getAllByRole("list")[0];
         const { getAllByRole } = within(list);
         const items = getAllByRole("listitem");
         const numberIncluded = getAllByRole('img', { name: 'Included' })
@@ -82,11 +83,12 @@ describe('the page has the following items', () => {
 
     it("shows what optional extras are in the policy", () => {
 
-        const list = screen.getAllByRole("list")[1];
+        const mainSection = screen.getByRole('main');
+        const list = within(mainSection).getAllByRole("list")[1];
         const { getAllByRole } = within(list);
         const items = getAllByRole("listitem");
-        const numberNotIncluded = getAllByRole('img', { name: 'Not included' })
-        const numberIncluded = getAllByRole('img', { name: 'Included' })
+        const numberNotIncluded = getAllByRole('img', { name: /Not Included/i })
+        const numberIncluded = getAllByRole('img', { name: "Included" })
 
         expect(items.length).toBe(4);
         expect(items[0]).toHaveTextContent('Personal Accident Cover')

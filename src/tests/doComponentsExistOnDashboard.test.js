@@ -1,6 +1,6 @@
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import App from '../App';
+import App from '../views/App';
 
 describe('there should be a component to display main policy details', () => {
     it('contains the policy number, start/end date, NCD, car registration & make', async () => {

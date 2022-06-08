@@ -1,4 +1,4 @@
-import usePolicyIsActive from "./usePolicyIsActive";
+import usePolicyIsActive from "utils/hooks/usePolicyIsActive";
 
 describe('the usePolicyIsActive hook', () => {
     it('returns true when the policy is active', () => {
